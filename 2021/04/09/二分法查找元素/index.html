@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>冒泡排序和选择排序 | Liumingyu的个人博客</title>
+  <title>二分法查找元素 | Liumingyu的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基本排序算法之冒泡和选择">
+  <meta name="description" content="二分法查找指定元素二分法的前提是该列表必须是有序的，非有序列表需要排序后查找">
 <meta property="og:type" content="article">
-<meta property="og:title" content="冒泡排序和选择排序">
-<meta property="og:url" content="http://example.com/2021/04/08/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%92%8C%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:title" content="二分法查找元素">
+<meta property="og:url" content="http://example.com/2021/04/09/%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0/index.html">
 <meta property="og:site_name" content="Liumingyu的个人博客">
-<meta property="og:description" content="基本排序算法之冒泡和选择">
+<meta property="og:description" content="二分法查找指定元素二分法的前提是该列表必须是有序的，非有序列表需要排序后查找">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-08T05:50:27.000Z">
-<meta property="article:modified_time" content="2021-04-08T05:52:22.077Z">
+<meta property="article:published_time" content="2021-04-09T11:23:30.000Z">
+<meta property="article:modified_time" content="2021-04-09T11:25:06.855Z">
 <meta property="article:author" content="liumingyu">
 <meta name="twitter:card" content="summary">
   
@@ -162,33 +162,34 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-冒泡排序和选择排序" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-二分法查找元素" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      冒泡排序和选择排序
+      二分法查找元素
     </h1>
   
 
         
-        <a href="/2021/04/08/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%92%8C%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2021-04-08T05:50:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-08</time>
+        <a href="/2021/04/09/%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0/" class="archive-article-date">
+  	<time datetime="2021-04-09T11:23:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>基本排序算法之冒泡和选择</p>
+        <h3 id="二分法查找指定元素"><a href="#二分法查找指定元素" class="headerlink" title="二分法查找指定元素"></a>二分法查找指定元素</h3><p>二分法的前提是该列表必须是有序的，非有序列表需要排序后查找</p>
 <span id="more"></span>
 
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>每次比较相邻的两个元素，根据升序或者降序的规则，通过比较符合条件后两者进行位置交换</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">num_list = [<span class="number">30</span>, <span class="number">11</span>, <span class="number">23</span>, <span class="number">35</span>, <span class="number">2</span>, <span class="number">13</span>, <span class="number">77</span>, <span class="number">34</span>]</span><br><span class="line"><span class="comment"># 外层循环控制比较的轮数，每次比较之后会有一个最值交换到边缘位置</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(num_list)-<span class="number">1</span>):</span><br><span class="line">    <span class="comment"># 内层循环控制每一轮比较的次数，随着轮数的增加，确定的元素越来越多，比较的次数也随之减少</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(num_list)-i-<span class="number">1</span>):</span><br><span class="line">        <span class="comment"># 每次将大的值往右移一位</span></span><br><span class="line">        <span class="keyword">if</span> num_list[j] &gt; num_list[j + <span class="number">1</span>]:</span><br><span class="line">            num_list[j], num_list[j+<span class="number">1</span>] = num_list[j+<span class="number">1</span>], num_list[j]</span><br><span class="line"><span class="built_in">print</span>(num_list)</span><br><span class="line"></span><br><span class="line">[<span class="number">2</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">23</span>, <span class="number">30</span>, <span class="number">34</span>, <span class="number">35</span>, <span class="number">77</span>]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>从列表的第一个元素开始，每一个元素依次和该元素后面的元素比较，根据升降序规则交换位置</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 外层循环控制比较轮数</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(num_list) - <span class="number">1</span>):</span><br><span class="line">    <span class="comment"># 内层循环控制该元素依次与后面的元素比较</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i + <span class="number">1</span>, <span class="built_in">len</span>(num_list)):</span><br><span class="line">        <span class="keyword">if</span> num_list[i] &lt; num_list[j]:</span><br><span class="line">            num_list[i], num_list[j] = num_list[j], num_list[i]</span><br><span class="line"><span class="built_in">print</span>(num_list)</span><br><span class="line"></span><br><span class="line">[<span class="number">77</span>, <span class="number">35</span>, <span class="number">34</span>, <span class="number">30</span>, <span class="number">23</span>, <span class="number">13</span>, <span class="number">11</span>, <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num_list = [<span class="number">30</span>,<span class="number">11</span>,<span class="number">23</span>,<span class="number">24</span>,<span class="number">35</span>,<span class="number">77</span>,<span class="number">2</span>,<span class="number">13</span>]</span><br><span class="line">list1 = num_list.copy()</span><br><span class="line">list1.sort()</span><br></pre></td></tr></table></figure>
+<p>定义4个变量，表示列表两边和中间的索引和要查找的元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">key = <span class="number">11</span></span><br><span class="line">left = <span class="number">0</span></span><br><span class="line">right = <span class="built_in">len</span>(list1) - <span class="number">1</span></span><br><span class="line">middle = (left + right) // <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>循环比较，查找出目标元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> left &lt;= right:</span><br><span class="line">	<span class="keyword">if</span> key &gt; list1[middle]:</span><br><span class="line">		left = middle + <span class="number">1</span></span><br><span class="line">	<span class="keyword">elif</span> key &lt; list1[moddle]:</span><br><span class="line">		right = moddle -<span class="number">1</span> </span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;&#123;&#125;在列表中&#x27;</span>.<span class="built_in">format</span>(key)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;&#123;&#125;不在在列表中&#x27;</span>.<span class="built_in">format</span>(key)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
 
       
@@ -277,7 +278,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://shiba1818.github.io/021/04/08/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%92%8C%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://shiba1818.github.io/021/04/09/%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -291,18 +292,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/04/09/%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          二分法查找元素
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/04/08/python%E5%88%97%E8%A1%A8%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">python列表相关函数</div>
+    <a href="/2021/04/08/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%92%8C%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">冒泡排序和选择排序</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -329,7 +321,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="toc-number">1.</span> <span class="toc-text">冒泡排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="toc-number">2.</span> <span class="toc-text">选择排序</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E6%8C%87%E5%AE%9A%E5%85%83%E7%B4%A0"><span class="toc-number">1.</span> <span class="toc-text">二分法查找指定元素</span></a></li></ol>
                     </div>
                 </span>
             </div>
