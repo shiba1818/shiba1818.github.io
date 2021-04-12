@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>python常用数据类型 | Liumingyu的个人博客</title>
+  <title>linux | Liumingyu的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常用数据类型">
+  <meta name="description" content="Linux基本操作、ssh连接、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python常用数据类型">
-<meta property="og:url" content="http://example.com/2021/04/08/python%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
+<meta property="og:title" content="linux">
+<meta property="og:url" content="http://example.com/2021/04/12/linux/index.html">
 <meta property="og:site_name" content="Liumingyu的个人博客">
-<meta property="og:description" content="常用数据类型">
+<meta property="og:description" content="Linux基本操作、ssh连接、">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-08T02:11:39.000Z">
-<meta property="article:modified_time" content="2021-04-08T02:18:25.083Z">
+<meta property="article:published_time" content="2021-04-12T06:15:58.000Z">
+<meta property="article:modified_time" content="2021-04-12T15:47:21.332Z">
 <meta property="article:author" content="liumingyu">
 <meta name="twitter:card" content="summary">
   
@@ -162,43 +162,158 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-python常用数据类型" class="article article-type-post " itemscope itemprop="blogPost">
+    <i class="fa fa-thumb-tack"></i>
+    <font color=7D26CD>置顶</font>
+    <span class="post-meta-divider">|</span>
+  
+<article id="post-linux" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      python常用数据类型
+      linux
     </h1>
   
 
         
-        <a href="/2021/04/08/python%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2021-04-08T02:11:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-08</time>
+        <a href="/2021/04/12/linux/" class="archive-article-date">
+  	<time datetime="2021-04-12T06:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>常用数据类型</p>
+        <p>Linux基本操作、ssh连接、</p>
 <span id="more"></span>
 
-<h3 id="整型-int"><a href="#整型-int" class="headerlink" title="整型 int"></a>整型 int</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line"></span><br><span class="line">结果：&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">int</span>&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="浮点型-float"><a href="#浮点型-float" class="headerlink" title="浮点型 float"></a>浮点型 float</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">num = <span class="number">3.1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num))</span><br><span class="line"></span><br><span class="line">结果：&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">float</span>&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="复数-complex-不常用）"><a href="#复数-complex-不常用）" class="headerlink" title="复数 complex(不常用）"></a>复数 complex(不常用）</h3><p>x = a + bj的形式</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">1</span> + <span class="number">2j</span></span><br><span class="line"><span class="comment"># 访问实部</span></span><br><span class="line">x.real</span><br><span class="line"><span class="comment"># 访问虚部</span></span><br><span class="line">x.imag</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="number">1</span> +<span class="number">2j</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.real</span><br><span class="line"><span class="number">1.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.imag</span><br><span class="line"><span class="number">2.0</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="布尔-bool"><a href="#布尔-bool" class="headerlink" title="布尔 bool"></a>布尔 bool</h3><p>布尔值中除了True和False之外，0、0.0、空字符串、空列表、空字典、空集合等都等价False，其余的等价True</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="built_in">type</span>(<span class="literal">False</span>)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">bool</span>&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="列表-list"><a href="#列表-list" class="headerlink" title="列表 list"></a>列表 list</h3><p>列表是一种可变，可迭代的数据类型，内部可以存储不同数据类型的数据<br>空列表用[]表示</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>list_stu = [<span class="string">&#x27;jack&#x27;</span>,<span class="string">&#x27;jerry&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">type</span>(list_stu)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">list</span>&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="元组-tuple"><a href="#元组-tuple" class="headerlink" title="元组 tuple"></a>元组 tuple</h3><p>元组是一种不可变，可迭代的数据类型，内部可以存储不同数据类型的数据<br>空元组用(,)表示</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>tuple_id = (<span class="string">&#x27;0001&#x27;</span>,<span class="string">&#x27;0002&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">type</span>(tuple_id)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">tuple</span>&#x27;&gt;</span></span><br><span class="line"><span class="class"></span></span><br></pre></td></tr></table></figure>
-<h3 id="字典-dict"><a href="#字典-dict" class="headerlink" title="字典 dict"></a>字典 dict</h3><p>字典是一种只能存储键值对，可迭代的数据类型<br>空字典用{}表示</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dict_ifm = &#123;<span class="string">&#x27;姓名&#x27;</span>:<span class="string">&#x27;张可爱&#x27;</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">type</span>(dict_ifm)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">dict</span>&#x27;&gt;</span></span><br><span class="line"><span class="class"></span></span><br></pre></td></tr></table></figure>
-<h3 id="集合-set"><a href="#集合-set" class="headerlink" title="集合 set"></a>集合 set</h3><p>集合是一种无序的，可迭代，可以存储不同类型数据的数据类型<br>空集合用set()表示</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>set_name = &#123;<span class="string">&#x27;jack&#x27;</span>,<span class="string">&#x27;tom&#x27;</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">type</span>(set_name)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">set</span>&#x27;&gt;</span></span><br><span class="line"><span class="class"></span></span><br></pre></td></tr></table></figure>
+<h2 id="一、ssh连接操作"><a href="#一、ssh连接操作" class="headerlink" title="一、ssh连接操作"></a>一、ssh连接操作</h2><p>1.1在Windows10上打开PowerSell命令窗口</p>
+<p>1.2ssh 用户名@主机ip地址或名称</p>
+<h4 id="1-3免密方式"><a href="#1-3免密方式" class="headerlink" title="1.3免密方式"></a>1.3免密方式</h4><p>1.3.1在powershell（客户端）生成公钥和私钥文件，命令如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
+
+<p>根据提示一步一步回车即可</p>
+<p>注意：powershell中执行命令失败以后，可以尝试以管理员身份运行</p>
+<p>1.3.2再通过scp命令将公钥文件(id_rsa.pub)上传到远程主机上（Linux主机）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp 文件名 root@host:/root/</span><br></pre></td></tr></table></figure>
+
+<p>1.3.3在远程主机上将公钥写入到授权文件(~/.ssh/authorized_keys)中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub &gt;&gt; .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="二、Linux中常用命令"><a href="#二、Linux中常用命令" class="headerlink" title="二、Linux中常用命令"></a>二、Linux中常用命令</h2><p>2.1 文件操作</p>
+<p>/根路径，（Windows的根路径是各个盘符，如C,D,E）</p>
+<p>~ 当前用户的home目录，（非root用户是在/home/{用户名}</p>
+<p>root用户目录是/root</p>
+<p>/user 所有用户可执行及工具所在的目录</p>
+<p>/etc 系统级别的配置文件所在目录</p>
+<p>/opt 自定义应用资源的目录</p>
+<p>/bin 系统可执行文件所在的目录</p>
+<p>2.1.1 ls</p>
+<h3 id="查看当前路径下的文件及目录"><a href="#查看当前路径下的文件及目录" class="headerlink" title="查看当前路径下的文件及目录"></a>查看当前路径下的文件及目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ls</span></span><br><span class="line">bin   dev  home  lib64  mnt  proc  run   srv  tmp  var</span><br><span class="line">boot  etc  lib   media  opt  root  sbin  sys  us</span><br></pre></td></tr></table></figure>
+
+<p>查看一个命令的帮助信息：命令   –help</p>
+<p>查看文件的索引编号  i     I 表示忽略编号</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -li</span><br></pre></td></tr></table></figure>
+
+<p>查看文件并以大小来排序</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -lS</span><br></pre></td></tr></table></figure>
+
+<p>查看文件，并以最后修改时间排序</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -lt</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-2目录切换cd"><a href="#2-1-2目录切换cd" class="headerlink" title="2.1.2目录切换cd"></a>2.1.2目录切换cd</h3><p>切换目录位置</p>
+<p>切换到/etc/ssh</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/ssh</span><br></pre></td></tr></table></figure>
+
+<p>如果当前路径在/etc/systemconfig/network-scripts,回到家目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-3-pwd命令"><a href="#2-1-3-pwd命令" class="headerlink" title="2.1.3   pwd命令"></a>2.1.3   <code>pwd</code>命令</h3><p>显示当前完整的绝对路径</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>
+
+<p>相对路径</p>
+<p><code>..</code>当前路径的父级目录</p>
+<p>从当前路径切换到父级目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-4-mkdir"><a href="#2-1-4-mkdir" class="headerlink" title="2.1.4 mkdir"></a>2.1.4 <code>mkdir</code></h3><p>创建文件目录</p>
+<p>创建单个目录，命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.ssh</span><br></pre></td></tr></table></figure>
+
+<p>表示当前用户的home目录下创建.ssh目录</p>
+<p>创建多级目录，命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ~/a/b/c/d/e/f</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-5-rmdir-命令"><a href="#2-1-5-rmdir-命令" class="headerlink" title="2.1.5   rmdir 命令"></a>2.1.5   <code>rmdir</code> 命令</h3><p>删除单个空目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rmdir 目录位置</span><br></pre></td></tr></table></figure>
+
+<p>删除多个级联目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rmdir -p 父级目录/子级目录...</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-6-rm命令"><a href="#2-1-6-rm命令" class="headerlink" title="2.1.6 rm命令"></a>2.1.6 rm命令</h3><p>删除文件及目录</p>
+<p>删除一个不为空的目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf 文件路径</span><br></pre></td></tr></table></figure>
+
+<p>删除一个不为空的文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -f 文件路径</span><br></pre></td></tr></table></figure>
+
+<p>删除code目录下所有的.txt文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf  *.txt</span><br></pre></td></tr></table></figure>
+
+<p>*表示通配符，表示任意多个字符</p>
+<h3 id="2-1-7-touch命令"><a href="#2-1-7-touch命令" class="headerlink" title="2.1.7   touch命令"></a>2.1.7   <code>touch</code>命令</h3><p>创建新的文件，若文件存在，则只更新它的修改时间。</p>
+<p>创建一个a.txt的空文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch a.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-8-echo命令"><a href="#2-1-8-echo命令" class="headerlink" title="2.1.8   echo命令"></a>2.1.8   <code>echo</code>命令</h3><p>打印文本的命令</p>
+<p>打印输出 “hello”</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;hello&quot;</span><br></pre></td></tr></table></figure>
+
+<p>将输出的内容输入到文件中，可以使用&gt;或&gt;&gt;流的重定向符号</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;print(188)&quot; &gt; code/a.py</span><br></pre></td></tr></table></figure>
+
+<p>2.1.9  <code>find</code>命令</p>
+<p>查找文件或目录</p>
+<p>格式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find 指定查找目录 -name &quot;*.py&quot;  </span><br></pre></td></tr></table></figure>
+
+<p>从当前目录查找所有python文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find ./ -name &quot;*.py&quot;</span><br></pre></td></tr></table></figure>
+
+<p>grep方式过滤文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . |grep .py</span><br></pre></td></tr></table></figure>
+
+<p><code>|</code>管道符号，表示将find命令查找到的所有内容，按行进行过滤，只保留包含查找的内容。</p>
+<h2 id="2-2文件权限操作"><a href="#2-2文件权限操作" class="headerlink" title="2.2文件权限操作"></a>2.2文件权限操作</h2><h4 id="2-2-1文件权限的组成"><a href="#2-2-1文件权限的组成" class="headerlink" title="2.2.1文件权限的组成"></a>2.2.1文件权限的组成</h4><p>一个文件或目录的权限是由三大部分组成的，分别是用户权限，用户组权限和其他组权限</p>
+<p>每一部分权限又分为三个小部分，分别是：r(读),w(写),x(执行)，所代表的数值是r：4,w：2,x：1</p>
+<p>如果权限为0时，使用-表示</p>
+<p>文件权限的部分是文件描述信息中从第二位开始：如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-rw--r--r-</span><br></pre></td></tr></table></figure>
+
+<p>第一位是文件类型：-表示文件，d表示文件夹/目录</p>
+<p><code>rw-</code>表示用户对此文件具有<code>读``写</code>权限</p>
+<p><code>r--</code>表示用户所在组的其他用户对此文件有<code>读</code>的权限</p>
+<p><code>r--</code>表示其他组的用户具有<code>读</code>的权限</p>
+<h4 id="2-2-2修改文件权限"><a href="#2-2-2修改文件权限" class="headerlink" title="2.2.2修改文件权限"></a>2.2.2修改文件权限</h4><p>chmod 命令</p>
+<h5 id="2-2-2-1字符权限"><a href="#2-2-2-1字符权限" class="headerlink" title="2.2.2.1字符权限"></a>2.2.2.1字符权限</h5><p>格式：<code>chmod [ugoa]&lt;+|-&gt; [r|w|x]</code> </p>
+<p>修改a.py文件的用户权限为    <code>rwx</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+rw a.py</span><br></pre></td></tr></table></figure>
+
+<p>为a.py文件增加其他用户组用户的执行权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod o+x a.py</span><br></pre></td></tr></table></figure>
+
+<p>r:4</p>
+<p>w:2</p>
+<p>x:1</p>
+<p>所有权限位上的数值相加为7</p>
+<p>777：代表所用用户都具有所有权限  -rwxrwxrwx</p>
+<p>666：代表所有用户都具有读写权限  rw-rw-rw-</p>
+<p>400：只有用户具有读取权限  r——–</p>
+<h5 id="2-2-2-2数值权限"><a href="#2-2-2-2数值权限" class="headerlink" title="2.2.2.2数值权限"></a>2.2.2.2数值权限</h5><h2 id="2-3服务操作"><a href="#2-3服务操作" class="headerlink" title="2.3服务操作"></a>2.3服务操作</h2>
       
 
       
@@ -235,6 +350,11 @@
       
     </div>
     <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
       
       
       
@@ -287,7 +407,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://shiba1818.github.io/021/04/08/python%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://shiba1818.github.io/021/04/12/linux/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -301,18 +421,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/04/08/python%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          python运算符及优先级
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/04/07/python%E9%9D%A2%E8%AF%95%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">python面试题</div>
+    <a href="/2021/04/09/Leetcode/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">leetcode</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -339,7 +450,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E5%9E%8B-int"><span class="toc-number">1.</span> <span class="toc-text">整型 int</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E5%9E%8B-float"><span class="toc-number">2.</span> <span class="toc-text">浮点型 float</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%95%B0-complex-%E4%B8%8D%E5%B8%B8%E7%94%A8%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">复数 complex(不常用）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B0%94-bool"><span class="toc-number">4.</span> <span class="toc-text">布尔 bool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8-list"><span class="toc-number">5.</span> <span class="toc-text">列表 list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%BB%84-tuple"><span class="toc-number">6.</span> <span class="toc-text">元组 tuple</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%85%B8-dict"><span class="toc-number">7.</span> <span class="toc-text">字典 dict</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88-set"><span class="toc-number">8.</span> <span class="toc-text">集合 set</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81ssh%E8%BF%9E%E6%8E%A5%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">一、ssh连接操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3%E5%85%8D%E5%AF%86%E6%96%B9%E5%BC%8F"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.3免密方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">二、Linux中常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E8%B7%AF%E5%BE%84%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E5%8F%8A%E7%9B%AE%E5%BD%95"><span class="toc-number">2.1.</span> <span class="toc-text">查看当前路径下的文件及目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2%E7%9B%AE%E5%BD%95%E5%88%87%E6%8D%A2cd"><span class="toc-number">2.2.</span> <span class="toc-text">2.1.2目录切换cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-pwd%E5%91%BD%E4%BB%A4"><span class="toc-number">2.3.</span> <span class="toc-text">2.1.3   pwd命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-mkdir"><span class="toc-number">2.4.</span> <span class="toc-text">2.1.4 mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-5-rmdir-%E5%91%BD%E4%BB%A4"><span class="toc-number">2.5.</span> <span class="toc-text">2.1.5   rmdir 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-6-rm%E5%91%BD%E4%BB%A4"><span class="toc-number">2.6.</span> <span class="toc-text">2.1.6 rm命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-7-touch%E5%91%BD%E4%BB%A4"><span class="toc-number">2.7.</span> <span class="toc-text">2.1.7   touch命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-8-echo%E5%91%BD%E4%BB%A4"><span class="toc-number">2.8.</span> <span class="toc-text">2.1.8   echo命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">2.2文件权限操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">3.0.1.</span> <span class="toc-text">2.2.1文件权限的组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.2.2修改文件权限</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-2-1%E5%AD%97%E7%AC%A6%E6%9D%83%E9%99%90"><span class="toc-number">3.0.2.1.</span> <span class="toc-text">2.2.2.1字符权限</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-2-2%E6%95%B0%E5%80%BC%E6%9D%83%E9%99%90"><span class="toc-number">3.0.2.2.</span> <span class="toc-text">2.2.2.2数值权限</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3%E6%9C%8D%E5%8A%A1%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text">2.3服务操作</span></a></li></ol>
                     </div>
                 </span>
             </div>
