@@ -16,7 +16,7 @@
 <meta property="og:description" content="Linux基本操作、ssh连接、">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-12T06:15:58.000Z">
-<meta property="article:modified_time" content="2021-04-12T16:04:38.466Z">
+<meta property="article:modified_time" content="2021-04-13T12:42:40.870Z">
 <meta property="article:author" content="liumingyu">
 <meta name="twitter:card" content="summary">
   
@@ -225,6 +225,11 @@
 <p>查看文件，并以最后修改时间排序</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -lt</span><br></pre></td></tr></table></figure>
 
+<p>查看/etc下所有文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /etc -lS</span><br></pre></td></tr></table></figure>
+
+
+
 <h3 id="2-1-2目录切换cd"><a href="#2-1-2目录切换cd" class="headerlink" title="2.1.2目录切换cd"></a>2.1.2目录切换cd</h3><p>切换目录位置</p>
 <p>切换到/etc/ssh</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/ssh</span><br></pre></td></tr></table></figure>
@@ -287,7 +292,29 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . |grep .py</span><br></pre></td></tr></table></figure>
 
 <p><code>|</code>管道符号，表示将find命令查找到的所有内容，按行进行过滤，只保留包含查找的内容。</p>
-<h2 id="2-2文件权限操作"><a href="#2-2文件权限操作" class="headerlink" title="2.2文件权限操作"></a>2.2文件权限操作</h2><h3 id="2-2-1文件权限的组成"><a href="#2-2-1文件权限的组成" class="headerlink" title="2.2.1文件权限的组成"></a>2.2.1文件权限的组成</h3><p>一个文件或目录的权限是由三大部分组成的，分别是用户权限，用户组权限和其他组权限</p>
+<h3 id="2-1-10-cp命令"><a href="#2-1-10-cp命令" class="headerlink" title="2.1.10  cp命令"></a>2.1.10  <code>cp</code>命令</h3><p>复制文件命令</p>
+<p>复制一个文本文件（备份）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp [-u] /etc/ssh/sshd_config /etc/ssh/sshd_config.bak</span><br></pre></td></tr></table></figure>
+
+<p>如果目标文件已存在，则会提示是否覆盖，输入y/yes即可</p>
+<p>【练习】</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mkdir code</span><br><span class="line">cd code</span><br><span class="line">echo &quot;hello&quot; &gt; a.txt</span><br><span class="line">cat a</span><br><span class="line">cp a.txt a.txt.bak</span><br><span class="line">echo &quot;good&quot; &gt;&gt; a.txt</span><br><span class="line">cat a</span><br><span class="line">cp -u a.txt a.txt.bak</span><br><span class="line">cat a.bak</span><br></pre></td></tr></table></figure>
+
+<p>复制一个目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -r 源目录 目标目录</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-11-mv命令"><a href="#2-1-11-mv命令" class="headerlink" title="2.1.11  mv命令"></a>2.1.11  <code>mv</code>命令</h3><p>移动文件或目录，具有重命名的功能</p>
+<p>移动文件位置，将/root/code/a文件移动到/opt目录下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /root/code/a /opt/</span><br></pre></td></tr></table></figure>
+
+<p>移动目录的位置，将root下的code目录移动到opt</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv code /opt/</span><br></pre></td></tr></table></figure>
+
+<p>重命名文件或目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/code/</span><br><span class="line">mv a.bak a.bakup</span><br></pre></td></tr></table></figure>
+
+<p>注意：如果文件在移动时是同一个目录，则结果是文件重命名</p>
+<h3 id="2-2文件权限操作"><a href="#2-2文件权限操作" class="headerlink" title="2.2文件权限操作"></a>2.2文件权限操作</h3><h4 id="2-2-1文件权限的组成"><a href="#2-2-1文件权限的组成" class="headerlink" title="2.2.1文件权限的组成"></a>2.2.1文件权限的组成</h4><p>一个文件或目录的权限是由三大部分组成的，分别是用户权限，用户组权限和其他组权限</p>
 <p>每一部分权限又分为三个小部分，分别是：r(读),w(写),x(执行)，所代表的数值是r：4,w：2,x：1</p>
 <p>如果权限为0时，使用-表示</p>
 <p>文件权限的部分是文件描述信息中从第二位开始：如下：</p>
@@ -297,7 +324,7 @@
 <p><code>rw-</code>表示用户对此文件具有<code>读``写</code>权限</p>
 <p><code>r--</code>表示用户所在组的其他用户对此文件有<code>读</code>的权限</p>
 <p><code>r--</code>表示其他组的用户具有<code>读</code>的权限</p>
-<h3 id="2-2-2修改文件权限"><a href="#2-2-2修改文件权限" class="headerlink" title="2.2.2修改文件权限"></a>2.2.2修改文件权限</h3><p>chmod 命令</p>
+<h4 id="2-2-2修改文件权限"><a href="#2-2-2修改文件权限" class="headerlink" title="2.2.2修改文件权限"></a>2.2.2修改文件权限</h4><p>chmod 命令</p>
 <h4 id="2-2-2-1字符权限"><a href="#2-2-2-1字符权限" class="headerlink" title="2.2.2.1字符权限"></a>2.2.2.1字符权限</h4><p>格式：<code>chmod [ugoa]&lt;+|-&gt; [r|w|x]</code> </p>
 <p>修改a.py文件的用户权限为    <code>rwx</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+rw a.py</span><br></pre></td></tr></table></figure>
@@ -312,7 +339,192 @@
 <p>777：代表所用用户都具有所有权限  -rwxrwxrwx</p>
 <p>666：代表所有用户都具有读写权限  rw-rw-rw-</p>
 <p>400：只有用户具有读取权限  r——–</p>
-<h2 id="2-3服务操作"><a href="#2-3服务操作" class="headerlink" title="2.3服务操作"></a>2.3服务操作</h2>
+<h3 id="2-3服务操作"><a href="#2-3服务操作" class="headerlink" title="2.3服务操作"></a>2.3服务操作</h3><p>服务：后台运行的程序（没有界面），在Windows中通过win + R 输入services.msc可以打开服务管理器。在Linux中通过top命令查看正在运行的服务。这些服务提供了客户端的程序，通过客户端和服务进行交互。</p>
+<h4 id="2-3-1-systemctl命令"><a href="#2-3-1-systemctl命令" class="headerlink" title="2.3.1   systemctl命令"></a>2.3.1   <code>systemctl</code>命令</h4><p>服务启动、停止、重启、启用（禁用）都需要使用systemctl命令</p>
+<p>命令格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl &lt;start|stop|restart|enable|disable|status&gt; &lt;服务名&gt;</span><br></pre></td></tr></table></figure>
+
+<p>常用服务名：network(网络服务)、sshd（远程连接服务）、</p>
+<p>start：启动服务</p>
+<p>stop：停止服务</p>
+<p>restrat：重启服务，由于服务的配置文件被更改，则需要重新加载配置文件</p>
+<p>enable：启用服务（第一次使用时），启用服务之后，系统重启之后，则自动启动服务</p>
+<p>disable：禁用服务，系统启动后不会自动启动服务</p>
+<p>status：查看服务状态</p>
+<p>重启网卡服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart network</span><br></pre></td></tr></table></figure>
+
+<p>启动ssh远程连接服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start sshd</span><br></pre></td></tr></table></figure>
+
+<p>2.3.2  <code>srvices</code>命令</p>
+<p>同ststemctl一样，是管理服务，不同是命令在服务名后面。</p>
+<p>格式：service &lt;服务名&gt; &lt;start|restart|stop|status&gt;</p>
+<p>which service查看service是否存在</p>
+<p>查看sshd命令状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service shhd status</span><br></pre></td></tr></table></figure>
+
+<p>重启sshd服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service shhd restart</span><br></pre></td></tr></table></figure>
+
+<p>service最终服务还是使用（重定向）systemctl。<font color="red">两者时间的区别在于service执行后有相应的响应信息（执行结果提示信息），systemctl只有执行错误的时候才有反馈信息.</font></p>
+<h4 id="2-3-3-netstat命令"><a href="#2-3-3-netstat命令" class="headerlink" title="2.3.3  netstat命令"></a>2.3.3  <code>netstat</code>命令</h4><p>检测到网络数据流的工具，默认情况下Centos没有安装，需要手动安装</p>
+<p>安装net-tools工具</p>
+<p><code>install</code>：安装</p>
+<p><code>uninstall</code>：卸载</p>
+<p><code>search</code>：搜索</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install net-tools -y</span><br></pre></td></tr></table></figure>
+
+<p>如果yum提示被占用，则等待yum之前的yum执行完成，或者以确定无人使用yum但还是被占用，则重启系统（reboot 或 init 0）</p>
+<p>查看网络统计信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -s</span><br></pre></td></tr></table></figure>
+
+<p>查看所有监听端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lntp</span><br></pre></td></tr></table></figure>
+
+<p>查看所有tcp协议的程序及端口号</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ltpn</span><br></pre></td></tr></table></figure>
+
+<p>查看22端口号是否被占用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lptn | grep 22 </span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<ul>
+<li><code>l</code>显示监听Listen进程</li>
+<li><code>t</code>代表tcp协议</li>
+<li>u代表udp协议</li>
+<li><code>a</code>代表所有已连接进程，包含listen和entablished</li>
+<li><code>p</code>代表进程的PID和程序名</li>
+<li><code>s</code>统计数据包相关数据</li>
+<li><code>n</code>不显示名称，显示索引（用户）或端口号（服务）</li>
+<li><code>e</code>显示扩展信息（extend)，显示用户和Node索引节点</li>
+</ul>
+<h4 id="2-3-4-ps命令"><a href="#2-3-4-ps命令" class="headerlink" title="2.3.4  ps命令"></a>2.3.4  <code>ps</code>命令</h4><p>ps用于查看当前运行的进程信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ps -ef</span><br><span class="line">[root@localhost code]# ps -ef</span><br><span class="line">UID        PID  PPID  C STIME TTY          TIME CMD</span><br><span class="line">root         1     0  0 08:44 ?        00:00:01 /usr/lib/sys</span><br><span class="line">root         2     0  0 08:44 ?        00:00:00 [kthreadd]</span><br></pre></td></tr></table></figure>
+
+<p>结果说明：</p>
+<ul>
+<li>UID：用户名</li>
+<li>PID：进程ID</li>
+<li>PPID：父进程ID</li>
+<li>TTY：运行终端的描述符，<code>？</code>表示后台服务</li>
+<li>CMD：进程执行的命令</li>
+<li>查看某一进程是否运行</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep sshd</span><br></pre></td></tr></table></figure>
+
+<p>如果查看某一进程时，不显示最后一行的grep信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep dbus | grep -v grep</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-3-5-kill命令"><a href="#2-3-5-kill命令" class="headerlink" title="2.3.5  kill命令"></a>2.3.5  <code>kill</code>命令</h4><p>​    杀掉进程</p>
+<p>命令格式：kill -&lt;数字信号&gt; &lt;进程id&gt;</p>
+<p>数字信号：9代表强制杀掉</p>
+<p>如，强制杀掉进程2295进程</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 2295</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4-yum-安装命令"><a href="#2-4-yum-安装命令" class="headerlink" title="2.4 yum 安装命令"></a>2.4 <code>yum</code> 安装命令</h3><p>yum是Centos的包管理器，用于管理第三方工具的安装、卸载和搜索等。类似python中的pip。</p>
+<p>第一次使用yum时需要更新（yum update)</p>
+<p>如果yum下载工具速度较慢，可以配置国内镜像仓库。</p>
+<h4 id="2-4-1-更新与配置源"><a href="#2-4-1-更新与配置源" class="headerlink" title="2.4.1  更新与配置源"></a>2.4.1  更新与配置源</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update -y</span><br></pre></td></tr></table></figure>
+
+<p>-y 表示遇到询问时，默认输入y</p>
+<h4 id="2-4-2-安装git"><a href="#2-4-2-安装git" class="headerlink" title="2.4.2 安装git"></a>2.4.2 安装git</h4><p>git是项目代码版本管理工具，git同svn一样都是版本管理，但git是分布式的。</p>
+<p>远程仓库平台：gitee.com</p>
+<p>尝试搜索安装包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum search git</span><br></pre></td></tr></table></figure>
+
+<p>查匹配结果，找到git.x86_64，如果存在则执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install git -y</span><br></pre></td></tr></table></figure>
+
+<p>查看git版本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<p>安装完成以后，可以尝试使用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/project1</span><br><span class="line">cd /opt/project1</span><br><span class="line">git init</span><br><span class="line">echo &quot;print(&#x27;hello&#x27;)&quot; &gt; a.py</span><br><span class="line">git add .</span><br><span class="line">git commit -m   &quot;本次提交的版本信息&quot;</span><br></pre></td></tr></table></figure>
+
+<p><code>git init</code>初始化本地仓库，初始化成功之后，会自动创建<code>.git</code>目录(以<code>.</code>)开头的文或目录适应藏的，可以使用<code>ls -la</code>方式显示</p>
+<p><code>git add .</code> 将当前目录中所有文件及目录添加倒缓存中（跟踪状态）。可以使用<code>git status</code>查看文件状态</p>
+<p><code>git commit -m</code> 提交缓存中的文件，即提交到本地仓库</p>
+<p><code>git push</code> 将本地仓库的代码上传到远程仓库。</p>
+<p><code>git pull</code> 将远程仓库的代码下载到本地仓库</p>
+<p><code>git log</code> 查看之前提交的日志信息</p>
+<p><code>git rm --cached  &lt;file&gt;</code> 再提交之前将缓存中的文件删除，仅仅只改变文件在本地仓库的状态</p>
+<p>注意：如果将本地仓库的版本代码上传到远程仓库时，需要配置用户名和邮箱</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;用户名&quot;</span><br><span class="line">git config --global user.email &quot;邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<p>配置成功之后，可以通过<code>git config -l</code></p>
+<p>练习：修改代码并提交一个新的版本，然后回退第一次提交的版本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/project1</span><br><span class="line">echo &quot;a,b = 100, 50&quot; &gt;&gt; test.py</span><br><span class="line">echo &quot;print(a + b)&quot; &gt;&gt; test.py</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;第二次修改了test.py&quot;</span><br><span class="line">git log</span><br></pre></td></tr></table></figure>
+
+<p>根据版本提示的信息（日志），查找到版本号<code>commit a57fc47d7f60096b...</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout a57fc47d7f60096b</span><br></pre></td></tr></table></figure>
+
+<p>注意：检出版本号的时候，只需要前几位即可（前提是所有版本号中是唯一的），只是临时切入指定的版本。</p>
+<p><code>git branch</code> 查看分支信息</p>
+<p>如果要彻底回退到之前的版本，意味着删除某一版本之后的修改</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git reset --hard &lt;版本号&gt;</span><br></pre></td></tr></table></figure>
+
+<p>master代表主分支</p>
+<h4 id="2-4-3-安装python3-7"><a href="#2-4-3-安装python3-7" class="headerlink" title="2.4.3 安装python3.7"></a>2.4.3 安装python3.7</h4><p>Centos7默认安装python2.7</p>
+<p>先安装<code>wget</code>工具（网络下载工具）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install wget -y</span><br></pre></td></tr></table></figure>
+
+<p>通过wget工具下载python3.7的安装包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;www.python.org&#x2F;ftp&#x2F;python&#x2F;3.7.0&#x2F;Python-3.7.0.tar.xz</span><br></pre></td></tr></table></figure>
+
+<p>也可以在53主机上下载代码到本机</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r root@10.36.174.53:&#x2F;root&#x2F;code .&#x2F;a</span><br></pre></td></tr></table></figure>
+
+<p>python3.7环境压缩包准备好之后，开始解压：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf python3.7.tar.xz</span><br></pre></td></tr></table></figure>
+
+<p>默认解压到当前目录，解压之后，需要编译（编译之前必须安装相关依赖，make/gcc）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y groupinstall &quot;Development tools&quot;</span><br><span class="line">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel</span><br><span class="line">yum install libffi-devel -y</span><br></pre></td></tr></table></figure>
+
+<p>进入到解压后的文件夹，检查配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd Python-3.7.0</span><br><span class="line">.&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;python3</span><br></pre></td></tr></table></figure>
+
+<p><code>/usr/local/python3</code>是安装目录</p>
+<p>如果检测没有出现<font color="red">Error</font>,则尝试编译和安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp; make install</span><br></pre></td></tr></table></figure>
+
+<p>当出现以下内容，表示安装成功。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Successfully installed pip-10.0.1 setuptools-39.0.1</span><br></pre></td></tr></table></figure>
+
+<p>设置python3.7的环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;profile</span><br></pre></td></tr></table></figure>
+
+<p>最后一行的下面添加内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PYTHON_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;python3</span><br><span class="line">export PATH&#x3D;$PATH:$PYTHON_HOME&#x2F;bin</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-4-4-安装docker"><a href="#2-4-4-安装docker" class="headerlink" title="2.4.4 安装docker"></a>2.4.4 安装docker</h4><h3 id="2-5vi编辑器"><a href="#2-5vi编辑器" class="headerlink" title="2.5vi编辑器"></a>2.5<code>vi</code>编辑器</h3><p>Linux强大的编辑器</p>
+<h4 id="2-5-1模式切换"><a href="#2-5-1模式切换" class="headerlink" title="2.5.1模式切换"></a>2.5.1模式切换</h4><p>存在三种模式：选择模式、编辑模式、命令模式</p>
+<p>从选择模式到编辑模式：按 <code>i</code> 键</p>
+<p>从编辑模式到选择模式：按 <code>esc</code> 键</p>
+<p>从选择模式到命令模式：<code>shift + :</code></p>
+<h4 id="2-5-2-编辑模式"><a href="#2-5-2-编辑模式" class="headerlink" title="2.5.2  编辑模式"></a>2.5.2  编辑模式</h4><p>从选择模式中：</p>
+<ul>
+<li>按<code>i</code>插入</li>
+<li>按<code>o</code>当前行下插入</li>
+<li>按O（<code>shift + o</code>) 当前行的上方插入</li>
+<li>按<code>I</code>移动光标到当前行的行首</li>
+<li>按<code>A</code>移动光标到行尾</li>
+</ul>
+<p><code>退出并保存</code>：先进入选择模式，按<code>shift + :</code>输入<code>wq</code>或<code>x</code>，如果编辑后不想保存且强制退出<code>q!</code></p>
+<h4 id="2-5-3-命令行模式"><a href="#2-5-3-命令行模式" class="headerlink" title="2.5.3  命令行模式"></a>2.5.3  命令行模式</h4><ul>
+<li>/查询的内容</li>
+<li>set number 显示行号</li>
+<li>行号  跳转到指定行号行首</li>
+<li><code>w</code>写入，不退出</li>
+<li><code>q</code>退出，前提没有修改文件</li>
+<li><code>q!</code>强制退出，不保存</li>
+<li><code>%s/查找的内容/替换的内容/g</code>    查找并替换全部</li>
+</ul>
+<h3 id="2-6-用户名及组命令"><a href="#2-6-用户名及组命令" class="headerlink" title="2.6  用户名及组命令"></a>2.6  用户名及组命令</h3>
       
 
       
@@ -449,7 +661,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81ssh%E8%BF%9E%E6%8E%A5%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">一、ssh连接操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3%E5%85%8D%E5%AF%86%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">1.3免密方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">二、Linux中常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-ls"><span class="toc-number">2.1.</span> <span class="toc-text">2.1.1  ls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2%E7%9B%AE%E5%BD%95%E5%88%87%E6%8D%A2cd"><span class="toc-number">2.2.</span> <span class="toc-text">2.1.2目录切换cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-pwd%E5%91%BD%E4%BB%A4"><span class="toc-number">2.3.</span> <span class="toc-text">2.1.3   pwd命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-mkdir"><span class="toc-number">2.4.</span> <span class="toc-text">2.1.4 mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-5-rmdir-%E5%91%BD%E4%BB%A4"><span class="toc-number">2.5.</span> <span class="toc-text">2.1.5   rmdir 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-6-rm%E5%91%BD%E4%BB%A4"><span class="toc-number">2.6.</span> <span class="toc-text">2.1.6  rm命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-7-touch%E5%91%BD%E4%BB%A4"><span class="toc-number">2.7.</span> <span class="toc-text">2.1.7   touch命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-8-echo%E5%91%BD%E4%BB%A4"><span class="toc-number">2.8.</span> <span class="toc-text">2.1.8   echo命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-9-find%E5%91%BD%E4%BB%A4"><span class="toc-number">2.9.</span> <span class="toc-text">2.1.9  find命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">2.2文件权限操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">3.1.</span> <span class="toc-text">2.2.1文件权限的组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-number">3.2.</span> <span class="toc-text">2.2.2修改文件权限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-1%E5%AD%97%E7%AC%A6%E6%9D%83%E9%99%90"><span class="toc-number">3.2.1.</span> <span class="toc-text">2.2.2.1字符权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-2%E6%95%B0%E5%80%BC%E6%9D%83%E9%99%90"><span class="toc-number">3.2.2.</span> <span class="toc-text">2.2.2.2数值权限</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3%E6%9C%8D%E5%8A%A1%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text">2.3服务操作</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81ssh%E8%BF%9E%E6%8E%A5%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">一、ssh连接操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3%E5%85%8D%E5%AF%86%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">1.3免密方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">二、Linux中常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-ls"><span class="toc-number">2.1.</span> <span class="toc-text">2.1.1  ls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2%E7%9B%AE%E5%BD%95%E5%88%87%E6%8D%A2cd"><span class="toc-number">2.2.</span> <span class="toc-text">2.1.2目录切换cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-pwd%E5%91%BD%E4%BB%A4"><span class="toc-number">2.3.</span> <span class="toc-text">2.1.3   pwd命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-mkdir"><span class="toc-number">2.4.</span> <span class="toc-text">2.1.4 mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-5-rmdir-%E5%91%BD%E4%BB%A4"><span class="toc-number">2.5.</span> <span class="toc-text">2.1.5   rmdir 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-6-rm%E5%91%BD%E4%BB%A4"><span class="toc-number">2.6.</span> <span class="toc-text">2.1.6  rm命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-7-touch%E5%91%BD%E4%BB%A4"><span class="toc-number">2.7.</span> <span class="toc-text">2.1.7   touch命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-8-echo%E5%91%BD%E4%BB%A4"><span class="toc-number">2.8.</span> <span class="toc-text">2.1.8   echo命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-9-find%E5%91%BD%E4%BB%A4"><span class="toc-number">2.9.</span> <span class="toc-text">2.1.9  find命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-10-cp%E5%91%BD%E4%BB%A4"><span class="toc-number">2.10.</span> <span class="toc-text">2.1.10  cp命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-11-mv%E5%91%BD%E4%BB%A4"><span class="toc-number">2.11.</span> <span class="toc-text">2.1.11  mv命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E6%93%8D%E4%BD%9C"><span class="toc-number">2.12.</span> <span class="toc-text">2.2文件权限操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">2.12.1.</span> <span class="toc-text">2.2.1文件权限的组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-number">2.12.2.</span> <span class="toc-text">2.2.2修改文件权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-1%E5%AD%97%E7%AC%A6%E6%9D%83%E9%99%90"><span class="toc-number">2.12.3.</span> <span class="toc-text">2.2.2.1字符权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-2%E6%95%B0%E5%80%BC%E6%9D%83%E9%99%90"><span class="toc-number">2.12.4.</span> <span class="toc-text">2.2.2.2数值权限</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E6%9C%8D%E5%8A%A1%E6%93%8D%E4%BD%9C"><span class="toc-number">2.13.</span> <span class="toc-text">2.3服务操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-systemctl%E5%91%BD%E4%BB%A4"><span class="toc-number">2.13.1.</span> <span class="toc-text">2.3.1   systemctl命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-3-netstat%E5%91%BD%E4%BB%A4"><span class="toc-number">2.13.2.</span> <span class="toc-text">2.3.3  netstat命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-4-ps%E5%91%BD%E4%BB%A4"><span class="toc-number">2.13.3.</span> <span class="toc-text">2.3.4  ps命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-5-kill%E5%91%BD%E4%BB%A4"><span class="toc-number">2.13.4.</span> <span class="toc-text">2.3.5  kill命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-yum-%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4"><span class="toc-number">2.14.</span> <span class="toc-text">2.4 yum 安装命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-1-%E6%9B%B4%E6%96%B0%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%BA%90"><span class="toc-number">2.14.1.</span> <span class="toc-text">2.4.1  更新与配置源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-2-%E5%AE%89%E8%A3%85git"><span class="toc-number">2.14.2.</span> <span class="toc-text">2.4.2 安装git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-3-%E5%AE%89%E8%A3%85python3-7"><span class="toc-number">2.14.3.</span> <span class="toc-text">2.4.3 安装python3.7</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-4-%E5%AE%89%E8%A3%85docker"><span class="toc-number">2.14.4.</span> <span class="toc-text">2.4.4 安装docker</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5vi%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">2.15.</span> <span class="toc-text">2.5vi编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-1%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2"><span class="toc-number">2.15.1.</span> <span class="toc-text">2.5.1模式切换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-2-%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.15.2.</span> <span class="toc-text">2.5.2  编辑模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-3-%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.15.3.</span> <span class="toc-text">2.5.3  命令行模式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E7%94%A8%E6%88%B7%E5%90%8D%E5%8F%8A%E7%BB%84%E5%91%BD%E4%BB%A4"><span class="toc-number">2.16.</span> <span class="toc-text">2.6  用户名及组命令</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
