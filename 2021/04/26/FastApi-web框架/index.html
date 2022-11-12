@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>test | Liumingyu的个人博客</title>
+  <title>FastApi web框架 | Liumingyu的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="测试文件">
+  <meta name="description" content="FastApi基于WSGI（web服务网关接口）和ASGI（异步服务网关接口）两种机制，并且集成Swagger UI方便查看和调试接口。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://example.com/2021/04/07/test/index.html">
+<meta property="og:title" content="FastApi web框架">
+<meta property="og:url" content="http://example.com/2021/04/26/FastApi-web%E6%A1%86%E6%9E%B6/index.html">
 <meta property="og:site_name" content="Liumingyu的个人博客">
-<meta property="og:description" content="测试文件">
+<meta property="og:description" content="FastApi基于WSGI（web服务网关接口）和ASGI（异步服务网关接口）两种机制，并且集成Swagger UI方便查看和调试接口。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-07T03:28:01.000Z">
-<meta property="article:modified_time" content="2021-04-07T11:05:56.766Z">
+<meta property="article:published_time" content="2021-04-26T01:24:39.000Z">
+<meta property="article:modified_time" content="2021-04-26T11:58:50.570Z">
 <meta property="article:author" content="liumingyu">
-<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Liumingyu的个人博客" type="application/atom+xml">
@@ -167,36 +166,87 @@
     <font color=7D26CD>置顶</font>
     <span class="post-meta-divider">|</span>
   
-<article id="post-test" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-FastApi-web框架" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      test
+      FastApi web框架
     </h1>
   
 
         
-        <a href="/2021/04/07/test/" class="archive-article-date">
-  	<time datetime="2021-04-07T03:28:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-07</time>
+        <a href="/2021/04/26/FastApi-web%E6%A1%86%E6%9E%B6/" class="archive-article-date">
+  	<time datetime="2021-04-26T01:24:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="测试文件"><a href="#测试文件" class="headerlink" title="测试文件"></a>测试文件</h2><span id="more"></span>
+        <blockquote>
+<p>FastApi基于WSGI（web服务网关接口）和ASGI（异步服务网关接口）两种机制，并且集成Swagger UI方便查看和调试接口。</p>
+</blockquote>
+<span id="more"></span>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">函数重写的注意事项</span></span><br><span class="line"><span class="string">    1.必须在继承的前提下，才有重写的操作</span></span><br><span class="line"><span class="string">    2.在子类中实现了父类的函数，称为函数的重写</span></span><br><span class="line"><span class="string">    3.在子类中重写了父类中的函数，调用的时候会优先调用子类中的函数</span></span><br><span class="line"><span class="string">    4.重写的要求：函数的声明部分完全相同</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义函数</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;父类&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>(<span class="params">Person</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;子类&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 系统函数</span></span><br><span class="line"><span class="comment"># 自定义函数</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name, age, hobby</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.hobby = hobby</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">    <span class="comment"># __str__默认返回对象的地址</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;姓名：&#123;&#125;，爱好：&#123;&#125;，年龄：&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(self.name, self.hobby, self.age)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 如果直接打印保存对象的容器，需要重写__repr__方法</span></span><br><span class="line">    <span class="comment"># def __repr__(self):</span></span><br><span class="line">    <span class="comment">#     return self.name</span></span><br><span class="line">    __repr__ = __str__</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;父类&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__gt__</span>(<span class="params">self, other</span>):</span></span><br><span class="line">        <span class="keyword">if</span> self.age &gt; other.age:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__lt__</span>(<span class="params">self, other</span>):</span></span><br><span class="line">        <span class="keyword">if</span> self.age &lt; other.age:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__eq__</span>(<span class="params">self, other</span>):</span></span><br><span class="line">        <span class="keyword">if</span> self.age == other.age:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">per1 = Person(<span class="string">&#x27;周星驰&#x27;</span>, <span class="number">68</span>, <span class="string">&#x27;喜剧&#x27;</span>)</span><br><span class="line">per2 = Person(<span class="string">&#x27;刘德华&#x27;</span>, <span class="number">65</span>, <span class="string">&#x27;警匪&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(per1)</span><br><span class="line"></span><br><span class="line">per_list = [per1]</span><br><span class="line"><span class="built_in">print</span>(per_list)</span><br><span class="line"><span class="built_in">print</span>(per1 &gt; per2)</span><br><span class="line"><span class="built_in">print</span>(per1 &lt; per2)</span><br><span class="line"><span class="built_in">print</span>(per1 == per2)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="一、安装与配置"><a href="#一、安装与配置" class="headerlink" title="一、安装与配置"></a>一、安装与配置</h1><h3 id="1-1-fastapi介绍"><a href="#1-1-fastapi介绍" class="headerlink" title="1.1 fastapi介绍"></a>1.1 fastapi介绍</h3><p>FastApi完全按照RESTful规范，开发APP数据接口（简称API）</p>
+<p>fastapi集成starlette(Web部分) + pydantic(数据部分) + IopenAPI(Swagger文档部分)，含包含了websocket（长链接：Web客服/即时通信IM）功能。</p>
+<p>RESTful规范：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 每一种资源都有一个唯一的标识 URI(统一资源标识符)</span><br><span class="line">- 每一种资源都具有GET&#x2F;POST&#x2F;PUT&#x2F;PATCH&#x2F;DELETE等相关动作（谓词）</span><br><span class="line">- 每一种资源的动作都是无状态的（短链接（请求头）：Connection：close）</span><br><span class="line">	【扩展】长连接（请求头）Connection:keep-alive;</span><br><span class="line">- 每一个动作交互的数据为json或xml</span><br></pre></td></tr></table></figure>
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=36496695&auto=1&height=66"></iframe>
+<p>WSGI：Web Server Gateway Interface</p>
+<p>Python已实现的接口</p>
+<p>原理：分装报文，基于socket接受和发送报文</p>
+<h3 id="1-2-安装库"><a href="#1-2-安装库" class="headerlink" title="1.2 安装库"></a>1.2 安装库</h3><p>安装fastapi库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install fastapi[all]</span><br></pre></td></tr></table></figure>
 
-<h2 id="三种实现方式单例设计模式"><a href="#三种实现方式单例设计模式" class="headerlink" title="三种实现方式单例设计模式"></a>三种实现方式单例设计模式</h2><h3 id="类属性实现单例设计模式"><a href="#类属性实现单例设计模式" class="headerlink" title="类属性实现单例设计模式"></a>类属性实现单例设计模式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">设计模式</span></span><br><span class="line"><span class="string">    经过总结，优化，对我们经常遇到的问题所提出的一些可重用的方案</span></span><br><span class="line"><span class="string">    设计模式是一种必须在特定的情境下使用的一种解决问题的犯案，不绑定编程语言</span></span><br><span class="line"><span class="string">    23种设计模式，常用的单例，MVC（MTV），生产者消费者设计模式</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">单例设计模式：</span></span><br><span class="line"><span class="string">    单例：单个实例，单个对象</span></span><br><span class="line"><span class="string">    程序在运行过程中，确保一个类只能创建一个实例，不管在当前程序中哪个模块中获取该类对象，获取到的都是同一个对象</span></span><br><span class="line"><span class="string">单例设计模式的核心：一个类仅有一个实例，该实例还需被应用在整个程序中</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    __instance = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span>(<span class="params">cls, *args, **kwargs</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> cls.__instance:</span><br><span class="line">            cls.__instance = <span class="built_in">super</span>(Person, cls).__new__(cls)</span><br><span class="line">        <span class="keyword">return</span> cls.__instance</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    每次创建对象，都会调用__new__和__init__，只有第一次调用时__init__是动态绑定属性，</span></span><br><span class="line"><span class="string">    后面调用都是对属性的重新赋值</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    __<span class="built_in">isinstance</span> = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span>(<span class="params">cls, *args, **kwargs</span>):</span></span><br><span class="line">        <span class="keyword">if</span> cls.__<span class="built_in">isinstance</span> <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            cls.__<span class="built_in">isinstance</span> = <span class="built_in">super</span>(A, cls).__new__(cls)</span><br><span class="line">        <span class="keyword">return</span> cls.__<span class="built_in">isinstance</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name, age</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a1 = A(<span class="string">&#x27;jack&#x27;</span>, <span class="number">12</span>)</span><br><span class="line">a2 = A(<span class="string">&#x27;tom&#x27;</span>, <span class="number">13</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a2))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>安装启动ASGI服务的库，可以使用uvicron或htpercorn</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install uvicorn[standard]</span><br></pre></td></tr></table></figure>
 
-<h3 id="装饰器实现单例设计模式"><a href="#装饰器实现单例设计模式" class="headerlink" title="装饰器实现单例设计模式"></a>装饰器实现单例设计模式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.装饰器装饰类</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">singleton</span>(<span class="params">cls</span>):</span></span><br><span class="line">    instance = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getinstance</span>(<span class="params">*args, **kwargs</span>):</span></span><br><span class="line">        <span class="keyword">nonlocal</span> instance</span><br><span class="line">        <span class="comment"># 构造函数只会在第一次创建对象的时候被调用</span></span><br><span class="line">        <span class="keyword">if</span> instance <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            instance = cls(*args, **kwargs)</span><br><span class="line">        <span class="keyword">return</span> instance</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> getinstance</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@singleton</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a1 = A()</span><br><span class="line">a2 = A()</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a2))</span><br></pre></td></tr></table></figure>
+<p>如果fastapi安装时选择[all]不用再安装uvicron</p>
+<h3 id="1-3-初次使用"><a href="#1-3-初次使用" class="headerlink" title="1.3 初次使用"></a>1.3 初次使用</h3><h1 id="二、请求定义"><a href="#二、请求定义" class="headerlink" title="二、请求定义"></a>二、请求定义</h1><blockquote>
+<p>请求数据的定义，即处理函数（URI响应函数）中的参数的定义。</p>
+</blockquote>
+<h3 id="路径参数"><a href="#路径参数" class="headerlink" title="路径参数"></a>路径参数</h3><blockquote>
+<p>必要参数，参数的值存在于URI的路径上。</p>
+<p>如果参数具有数据类型时，请求时参数值必须符合参数类型</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&#x27;items/&#123;_id&#125;&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getItemById</span>(<span class="params">_id:<span class="built_in">int</span></span>)</span></span><br><span class="line">	return &#123;&#x27;msg&#x27;:&#x27;xxx&#x27;&#125;</span><br></pre></td></tr></table></figure>
 
+<p>有效的URI资源：</p>
+<ul>
+<li>/items/1</li>
+<li>/items/55</li>
+</ul>
+<p>无效的URI资源：</p>
+<ul>
+<li>/items/abc</li>
+<li>/items/1/1/2/</li>
+</ul>
+<p>可以通过Enum类定义参数的预设值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> enum <span class="keyword">import</span> Enum</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CateNameEnum</span>(<span class="params"><span class="built_in">str</span>,Enum</span>):</span></span><br><span class="line">    book = <span class="string">&#x27;book&#x27;</span></span><br><span class="line">    pad = <span class="string">&#x27;pad&#x27;</span></span><br><span class="line">    phone = <span class="string">&#x27;phone&#x27;</span></span><br><span class="line">    tv = <span class="string">&#x27;tv&#x27;</span></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&#x27;/items/&#123;catename&#125;&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getItemsByCate</span>(<span class="params">catename:CateNameEnum</span>):</span></span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&#x27;select&#x27;</span>:catename, <span class="string">&#x27;tv_status&#x27;</span>: catename==CateNameEnum.tv&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以通过Path函数来指定</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Optional</span></span><br><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> FastAPI</span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&#x27;/items/&#123;_id&#125;&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_item</span>(<span class="params">_id: <span class="type">Optional</span>[<span class="built_in">int</span>] = Path(<span class="params">..., title=<span class="string">&#x27;产品ID&#x27;</span>,</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="params">                                        gt=<span class="number">0</span>,</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="params">                                        description=<span class="string">&#x27;产品编号&#x27;</span></span>)</span>):</span></span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&#x27;_id&#x27;</span>: _<span class="built_in">id</span>, <span class="string">&#x27;msg&#x27;</span>: <span class="string">&#x27;已查到&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>【说明】Path()中的<code>...</code>表示必须参数，如果是<code>None</code>表示可选参数</p>
+<h3 id="查询参数"><a href="#查询参数" class="headerlink" title="查询参数"></a>查询参数</h3><blockquote>
+<p>参数的位置是URI的?后面，参数在处理函数中定义同Path路径参数，但数据验证和相关的其他信息则使用fastapi.query类声明</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>【说明】</p>
+<p><em>多个查询参数</em></p>
+<h3 id="表单参数"><a href="#表单参数" class="headerlink" title="表单参数"></a>表单参数</h3><h3 id="文件参数"><a href="#文件参数" class="headerlink" title="文件参数"></a>文件参数</h3><h3 id="json数据"><a href="#json数据" class="headerlink" title="json数据"></a>json数据</h3><h3 id="验证错误类型"><a href="#验证错误类型" class="headerlink" title="验证错误类型"></a>验证错误类型</h3><blockquote>
+<p>数据验证由pydantic来完成</p>
+</blockquote>
+<ul>
+<li>type_error.integer     数值类型不是integer类型</li>
+<li>value_error.number.not_gt      数值低于指定的值</li>
+<li>value_error.str.regex     正则验证</li>
+</ul>
 
       
 
@@ -241,17 +291,6 @@
         </div>
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -302,7 +341,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://shiba1818.github.io/021/04/07/test/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://shiba1818.github.io/021/04/26/FastApi-web%E6%A1%86%E6%9E%B6/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -316,18 +355,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/04/07/python%E9%9D%A2%E8%AF%95%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/11/12/Flask-web%E6%A1%86%E6%9E%B6/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          python面试题
+          Flask web框架
         
       </div>
     </a>
   
   
-    <a href="/2021/04/06/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2021/04/19/python%E5%85%A8%E6%A0%88-%E5%8D%95%E8%AF%8D%E6%95%B4%E7%90%86(%E5%85%A8)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -354,7 +393,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">测试文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">三种实现方式单例设计模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text">类属性实现单例设计模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8%E5%AE%9E%E7%8E%B0%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.2.</span> <span class="toc-text">装饰器实现单例设计模式</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">一、安装与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-fastapi%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.1 fastapi介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%AE%89%E8%A3%85%E5%BA%93"><span class="toc-number">1.0.2.</span> <span class="toc-text">1.2 安装库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%88%9D%E6%AC%A1%E4%BD%BF%E7%94%A8"><span class="toc-number">1.0.3.</span> <span class="toc-text">1.3 初次使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%AF%B7%E6%B1%82%E5%AE%9A%E4%B9%89"><span class="toc-number">2.</span> <span class="toc-text">二、请求定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0"><span class="toc-number">2.0.1.</span> <span class="toc-text">路径参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0"><span class="toc-number">2.0.2.</span> <span class="toc-text">查询参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E5%8F%82%E6%95%B0"><span class="toc-number">2.0.3.</span> <span class="toc-text">表单参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%8F%82%E6%95%B0"><span class="toc-number">2.0.4.</span> <span class="toc-text">文件参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json%E6%95%B0%E6%8D%AE"><span class="toc-number">2.0.5.</span> <span class="toc-text">json数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E9%94%99%E8%AF%AF%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.0.6.</span> <span class="toc-text">验证错误类型</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
